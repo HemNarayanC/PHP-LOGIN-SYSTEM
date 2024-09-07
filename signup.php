@@ -21,6 +21,7 @@
 
             else{
                 if(($password == $confirmpw)){
+                    //hashing the password
                     $hashpassword = password_hash($password, PASSWORD_DEFAULT);
                     $sql = "INSERT INTO `users`(`email`,`password`,`date`) VALUES ('$useremail', '$hashpassword', current_timestamp())";
                     $result = mysqli_query($conn, $sql);
